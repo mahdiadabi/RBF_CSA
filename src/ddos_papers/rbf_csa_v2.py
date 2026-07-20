@@ -1,3 +1,13 @@
+"""Train and evaluate a GA-selected RBF DDoS detector with Cuckoo Search.
+
+The command-line entry point loads binary NSL-KDD data, selects exactly nine
+original feature groups with a genetic algorithm, initializes a Gaussian RBF
+classifier with K-means and logistic regression, and optimizes that classifier
+with Cuckoo Search. It chooses the classification threshold from a validation
+split and writes JSON metrics for the training, test, and complete datasets to
+standard output.
+"""
+
 from __future__ import annotations
 
 import argparse
